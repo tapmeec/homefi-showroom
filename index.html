@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homeFi | Link in Bio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: #0d1527; /* Fondo general azul oscuro */
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Gran tarjeta blanca central */
+        .main-card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 480px;
+            border-radius: 36px;
+            padding: 50px 28px 32px 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Perfil / Header */
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 28px;
+            width: 100%;
+        }
+
+        .logo-container {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            margin-bottom: 16px;
+            padding: 4px;
+            border: 2px solid #eaeaea;
+            overflow: hidden;
+        }
+
+        .logo-container img {
+            width: 115%;
+            height: 115%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        p.bio {
+            font-size: 0.9rem;
+            color: #64748b;
+            max-width: 360px;
+            line-height: 1.4;
+            margin-top: 8px;
+        }
+
+        /* Contenedor de Enlaces */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .bio-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 15px 18px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            cursor: pointer;
+        }
+
+        .bio-link:hover {
+            transform: translateY(-2px);
+            border-color: #0098da;
+            box-shadow: 0 6px 16px rgba(0, 152, 218, 0.12);
+        }
+
+        .link-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .link-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .link-text h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 2px;
+        }
+
+        .link-text span {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        .link-arrow {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        /* Footer con el logo de Tap Me (w-40) limpio */
+        footer {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        .tapme-logo-link {
+            display: inline-block;
+            transition: transform 0.2s ease;
+            background: transparent;
+            padding: 0;
+            margin-top: -4px;
+        }
+
+        .tapme-logo-link:hover {
+            transform: scale(1.05);
+        }
+
+        .w-40 {
+            width: 10rem;
+        }
+
+        .tapme-logo-link img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-card">
+        <!-- Perfil / Logo Principal -->
+        <div class="profile-card">
+            <div class="logo-container">
+                <img src="logohomefi.png" alt="homeFi Logo">
+            </div>
+            <p class="bio">Tecnología inteligente para transformar cada espacio de tu hogar en una experiencia única.</p>
+        </div>
+
+        <!-- Enlaces -->
+        <div class="links-container">
+            <!-- Botón de Exchange Contact -->
+            <a id="exchange-btn" class="bio-link">
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #0098da;">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Exchange Contact</h3>
+                        <span>Guardar tarjeta de contacto</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-download link-arrow"></i>
+            </a>
+
+            <!-- Página Web -->
+            <a href="https://homefi.com.ec/" target="_blank" class="bio-link">
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #0098da;">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Tienda Online Oficial</h3>
+                        <span>homefi.com.ec</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/593962627852" target="_blank" class="bio-link">
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #25D366;">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Atención por WhatsApp</h3>
+                        <span>+593 96 262 7852</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/homefi.ec?utm_source=ig_web_button_share_sheet&psln=ZDNlZDc0MzIxNw==" target="_blank" class="bio-link">
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #E1306C;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Síguenos en Instagram</h3>
+                        <span>@homefi.ec</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+
+            <!-- Reseña de Google -->
+            <a href="https://search.google.com/local/writereview?placeid=ChIJMfLmfxGR1ZERCpkq7V22lEo" target="_blank" class="bio-link">
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #FBBC05;">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Califícanos en Google</h3>
+                        <span>Déjanos tu reseña 5 estrellas</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <span>Powered by</span>
+            <a href="https://wa.me/593988725270" target="_blank" class="tapme-logo-link w-40" title="Contactar Tap Me">
+                <img src="logotapme.png" alt="Tap Me Logo">
+            </a>
+        </footer>
+    </div>
+
+    <!-- Script de vCard actualizado con info@homefi.com.ec -->
+    <script>
+        document.getElementById('exchange-btn').addEventListener('click', function() {
+            const vcardData = 
+`BEGIN:VCARD
+VERSION:3.0
+FN:HOMEFI
+ORG:homeFi Ecuador
+TEL;TYPE=CELL:+593962627852
+EMAIL:info@homefi.com.ec
+URL:https://homefi.com.ec/
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'HOMEFI.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
