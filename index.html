@@ -273,15 +273,33 @@
         </footer>
     </div>
 
-    <!-- Script de vCard con solo el nombre HomeFi -->
+    <!-- Script de vCard optimizado con saltos explícitos -->
     <script>
-        document.getElementById('exchange-btn').addEventListener('click', function() {
-            const vcardData = 
-`BEGIN:VCARD
-VERSION:3.0
-N:;HomeFi;;;
-FN:HomeFi
-ORG:homeFi Ecuador
-TEL;TYPE=CELL:+593962627852
-EMAIL:info@homefi.com.ec
-URL:
+        document.getElementById('exchange-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const vcardData = [
+                "BEGIN:VCARD",
+                "VERSION:3.0",
+                "N:;HomeFi;;;",
+                "FN:HomeFi",
+                "ORG:homeFi Ecuador",
+                "TEL;TYPE=CELL:+593962627852",
+                "EMAIL:info@homefi.com.ec",
+                "URL:https://homefi.com.ec/",
+                "END:VCARD"
+            ].join("\n");
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'HOMEFI.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(url), 100);
+        });
+    </script>
+</body>
+</html>
