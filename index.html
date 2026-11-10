@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homeFi | Link in Bio</title>
+    <title>HomeFi | Link in Bio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -273,30 +273,15 @@
         </footer>
     </div>
 
-    <!-- Script de vCard actualizado con N:Domótica;HOMEFI;;; y FN:HOMEFI Domótica -->
+    <!-- Script de vCard con solo el nombre HomeFi -->
     <script>
         document.getElementById('exchange-btn').addEventListener('click', function() {
             const vcardData = 
 `BEGIN:VCARD
 VERSION:3.0
-N:Domótica;HOMEFI;;;
-FN:HOMEFI Domótica
+N:;HomeFi;;;
+FN:HomeFi
 ORG:homeFi Ecuador
 TEL;TYPE=CELL:+593962627852
 EMAIL:info@homefi.com.ec
-URL:https://homefi.com.ec/
-END:VCARD`;
-
-            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'HOMEFI.vcf';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        });
-    </script>
-</body>
-</html>
+URL:
